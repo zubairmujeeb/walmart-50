@@ -1,0 +1,127 @@
+<div id="banner">
+  <div class="container-wide" id="bannerContent">
+    <div id="logo"><a href="/" rel="nofollow"><img style="max-width: 200px;"
+          src="https://producttestingusa.com/img/ptusa/PTUSA_logo.svg" alt="Product Testing USA"></a></div>
+    <div id="navButtons">
+      <div id="categoriesButtonMobile" class="vAlignMiddle"></div>
+      <img id="searchDesktop" class="vAlignMiddle" src="https://producttestingusa.com/img/ptusa/search.png"
+        alt="Search">
+    </div>
+    <div id="searchBox">
+      <form action="/search" method="get">
+        <input name="type" type="hidden" value="">
+        <input name="query" type="text" id="searchInput" placeholder="Search" value="">
+      </form>
+    </div>
+    <div id="navLinks">
+      <a class="nav-home-icon" href="/" rel="nofollow"></a>
+      <a id="categoriesButton" data-menu-id="categoriesButton" (click)="switchDD()">Categories</a>
+      <a href="/latest-reviewers">Latest Reviewers</a>
+      <a id="howItWorksButton" data-menu-id="howItWorksButton">How it Works</a>
+      <a href="/reviews">Review
+        Room</a>
+    </div>
+
+  </div>
+</div>
+<div id="bannerCategories" *ngIf="showDD">
+  <ul>
+    <li class="menuDrop show_item" id="cats" data-menu-id="categoriesButton">
+      <a href="#">Categories</a>
+      <ul class="banner-categories">
+        <li>
+          <a href="/category"
+            style="background-image: url('https://producttestingusa.com/uploads/categories/new%20icons/baby.png');">Baby</a>
+        </li>
+        <li>
+          <a href="/category/beauty"
+            style="background-image: url('https://producttestingusa.com/uploads/categories/new%20icons/beauty.png');">Beauty</a>
+        </li>
+        <li>
+          <a href="/category/fashion"
+            style="background-image: url('https://producttestingusa.com/uploads/categories/new%20icons/fashion.png');">Fashion</a>
+        </li>
+        <li>
+          <a href="/category/mystery-shoppers"
+            style="background-image: url('https://producttestingusa.com/uploads/categories/new%20icons/mysteryShoppers.png');">Mystery
+            Shoppers</a>
+        </li>
+        <li>
+          <a href="/category/technology"
+            style="background-image: url('https://producttestingusa.com/uploads/categories/new%20icons/technology.png');">Technology</a>
+        </li>
+        <li>
+          <a href="/category/gaming"
+            style="background-image: url('https://producttestingusa.com/uploads/categories/new%20icons/gaming.png');">Gaming</a>
+        </li>
+        <li>
+          <a href="/category/home-garden"
+            style="background-image: url('https://producttestingusa.com/uploads/categories/new%20icons/home.png');">Home
+            &amp; Garden</a>
+        </li>
+        <li>
+          <a href="/category/secret-diners"
+            style="background-image: url('https://producttestingusa.com/uploads/categories/new%20icons/secretDiner.png');">Secret
+            Diners</a>
+        </li>
+        <li>
+          <a href="/category/pets"
+            style="background-image: url('https://producttestingusa.com/uploads/categories/new%20icons/pets.png');">Pets</a>
+        </li>
+        <li>
+          <a href="/category/entertainment"
+            style="background-image: url('https://producttestingusa.com/uploads/categories/new%20icons/entertainment.png');">Entertainment</a>
+        </li>
+      </ul>
+    </li>
+    <li class="menuDrop" id="hiw" data-menu-id="howItWorksButton">
+      <a href="#">How it Works </a>
+      <ul id="howItWorks">
+        <li>
+          <div>
+            <p class="title">Step 1</p>
+            <p>Select the product you want to test</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <p class="title">Step 2</p>
+            <p>If selected, receive your chosen product</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <p class="title">Step 3</p>
+            <p>Test, review and keep your product for free</p>
+          </div>
+        </li>
+      </ul>
+      <a href="/#siteList" class="view_products">SELECT A PRODUCT</a>
+    </li>
+    <li><a href="/latest-reviewers">Latest Reviewers</a></li>
+    <li><a href="/reviews">Review room</a></li>
+    <li><a href="/p/about-us">About us</a></li>
+    <li><a href="/p/privacy-policy">Privacy Notice</a></li>
+    <li><a href="/p/terms-conditions">Terms &amp; Conditions</a></li>
+    <li><a href="/faqs">FAQs</a></li>
+    <li><a href="/login">Log In</a></li>
+  </ul>
+
+  <div id="mobileFooter">
+    <p id="mobileFooterSocialMedia">
+      <a href="https://www.facebook.com/ProductTestingUSA" target="_blank">
+        <img src="/img/ptusa/layout2/fbmedium.png" alt="Facebook">
+      </a>
+      <a href="https://twitter.com/ProductTestUSA" target="_blank">
+        <img src="/img/ptusa/layout2/twittermedium.png" alt="Twitter">
+      </a>
+      <a href="https://www.youtube.com/channel/UCUR2zHD2XuIDAVQ4MVEqApQ" target="_blank">
+        <img src="/img/ptusa/layout2/youtubemedium.png" alt="Youtube">
+      </a>
+      <a href="https://www.instagram.com/producttestingusa/" target="_blank">
+        <img src="/img/ptusa/layout2/instagrammedium.png" title="Instagram">
+      </a>
+    </p>
+  </div>
+
+</div>

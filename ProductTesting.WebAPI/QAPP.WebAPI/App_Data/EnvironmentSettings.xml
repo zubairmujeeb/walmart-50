@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EnvironmentSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Environments>
+    <Environment>
+      <Name>defaultValues</Name>
+      <Settings>
+        <Setting>
+          <Key>TokenSecret</Key>
+          <Value>my_secret_key_12345</Value>
+        </Setting>
+      </Settings>
+    </Environment>
+  </Environments>
+</EnvironmentSettings>

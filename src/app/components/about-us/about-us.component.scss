@@ -1,0 +1,26 @@
+*,
+::before,
+::after {
+  box-sizing: border-box !important;
+}
+.container {
+  max-width: 940px;
+  margin: 0px auto;
+}
+.whiteContainer {
+  background: rgb(255, 255, 255);
+  padding: 10px;
+  margin-top: 20px;
+  position: relative;
+}
+a {
+  text-decoration: none;
+}
+#customPage a {
+  color: rgb(30, 202, 107);
+}
+@media (max-width: 940px) {
+  .container {
+    padding: 0px 10px;
+  }
+}

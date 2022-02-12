@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProductTestingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Identity">
+    <Key>
+      <PropertyRef Name="IdentityID" />
+    </Key>
+    <Property Name="IdentityID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+    <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="QuestionnaireResponses" Relationship="Self.FK_QuestionnaireResponse_Identity1" FromRole="Identity" ToRole="QuestionnaireResponse" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PhotoPath" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ProductQuestions" Relationship="Self.FK_ProductQuestion_Product" FromRole="Product" ToRole="ProductQuestion" />
+    <Property Name="CreatedDateTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ProductQuestion">
+    <Key>
+      <PropertyRef Name="QuestionID" />
+    </Key>
+    <Property Name="QuestionID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="Int64" Nullable="false" />
+    <Property Name="Statement" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Photo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Answer" Type="Boolean" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_ProductQuestion_Product" FromRole="ProductQuestion" ToRole="Product" />
+    <NavigationProperty Name="QuestionnaireResponses" Relationship="Self.FK_QuestionnaireResponse_Identity" FromRole="ProductQuestion" ToRole="QuestionnaireResponse" />
+  </EntityType>
+  <EntityType Name="QuestionnaireResponse">
+    <Key>
+      <PropertyRef Name="QuestionnaireResponse1" />
+    </Key>
+    <Property Name="QuestionnaireResponse1" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QuestionID" Type="Int64" Nullable="false" />
+    <Property Name="RespondantID" Type="Int64" Nullable="false" />
+    <Property Name="Response" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Identity" Relationship="Self.FK_QuestionnaireResponse_Identity1" FromRole="QuestionnaireResponse" ToRole="Identity" />
+    <NavigationProperty Name="ProductQuestion" Relationship="Self.FK_QuestionnaireResponse_Identity" FromRole="QuestionnaireResponse" ToRole="ProductQuestion" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_QuestionnaireResponse_Identity1">
+    <End Role="Identity" Type="Self.Identity" Multiplicity="1" />
+    <End Role="QuestionnaireResponse" Type="Self.QuestionnaireResponse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Identity">
+        <PropertyRef Name="IdentityID" />
+      </Principal>
+      <Dependent Role="QuestionnaireResponse">
+        <PropertyRef Name="RespondantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductQuestion_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="ProductQuestion" Type="Self.ProductQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="ProductQuestion">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QuestionnaireResponse_Identity">
+    <End Role="ProductQuestion" Type="Self.ProductQuestion" Multiplicity="1" />
+    <End Role="QuestionnaireResponse" Type="Self.QuestionnaireResponse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductQuestion">
+        <PropertyRef Name="QuestionID" />
+      </Principal>
+      <Dependent Role="QuestionnaireResponse">
+        <PropertyRef Name="QuestionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ProductTestingEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Identities" EntityType="Self.Identity" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="ProductQuestions" EntityType="Self.ProductQuestion" />
+    <EntitySet Name="QuestionnaireResponses" EntityType="Self.QuestionnaireResponse" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="FK_QuestionnaireResponse_Identity1" Association="Self.FK_QuestionnaireResponse_Identity1">
+      <End Role="Identity" EntitySet="Identities" />
+      <End Role="QuestionnaireResponse" EntitySet="QuestionnaireResponses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductQuestion_Product" Association="Self.FK_ProductQuestion_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductQuestion" EntitySet="ProductQuestions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QuestionnaireResponse_Identity" Association="Self.FK_QuestionnaireResponse_Identity">
+      <End Role="ProductQuestion" EntitySet="ProductQuestions" />
+      <End Role="QuestionnaireResponse" EntitySet="QuestionnaireResponses" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(ProductTestingModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(ProductTestingModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

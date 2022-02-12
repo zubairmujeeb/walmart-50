@@ -1,0 +1,452 @@
+<body style="">
+  <style>
+    @media (min-width:1100px) {
+      body {
+        background-image: url(/assets/862_background.jpeg);
+        background-attachment: fixed !important;
+        background-position: center top;
+        background-size: 100%;
+      }
+    }
+
+  </style>
+  <script src="https://www.google.com/recaptcha/api.js?render=6LeNVb8UAAAAAP_vvAEDpoiFzqfpeYU4Im8AVoD0"></script>
+  <script>
+    grecaptcha.ready(function () {
+      grecaptcha.execute('6LeNVb8UAAAAAP_vvAEDpoiFzqfpeYU4Im8AVoD0', {
+        action: 'patholduser'
+      }).then(function (token) {});
+    });
+
+  </script>
+  <style>
+    .campaign {
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin: 10px 50px 10px 50px;
+    }
+
+    #topContent {
+      background: rgb(61, 61, 61);
+      background: rgba(61, 61, 61, 1);
+    }
+
+    .relative {
+      position: relative;
+    }
+
+    .path-arrow-graphic {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 10px;
+    }
+
+    .path-arrow-graphic img {
+      width: 200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .img-container-wrapper {
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .instructions p {
+      font-size: 1.5em;
+    }
+
+    .instruction-faded {
+      color: #c5c5c5;
+    }
+
+    .img-container {
+      height: 290px;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+    }
+
+    .path-progress-graphic {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    .path-progress-graphic img {
+      width: 100%;
+      max-width: 700px;
+    }
+
+    img.path-progress-graphic-desktop {
+      display: initial;
+    }
+
+    img.path-progress-graphic-mobile {
+      display: none;
+    }
+
+    .inline-input-group {
+      position: relative;
+      overflow: hidden;
+      /* crazy css that keeps floating left children from pushing vertically outside the parent */
+    }
+
+    input.inline-with-button {
+      margin-right: 0;
+      display: inline-block;
+      width: 60% !important;
+      float: left;
+      border-top-right-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+    }
+
+    button.inline-with-input {
+      border: 1px solid #1cbe65;
+      background: white;
+      color: #1cbe65;
+      display: inline-block;
+      height: 35px;
+      margin-left: 0;
+      width: 40%;
+      float: left;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+
+    .campaign .thankyou {
+      padding: 15px 5px 5px 5px;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .campaign {
+        padding: 15px;
+        margin: 10px 0 10px 0;
+      }
+
+      .img-container-wrapper {
+        max-width: 270px;
+      }
+
+      .img-container {
+        height: 160px;
+      }
+
+      .path-progress-graphic img {
+        max-width: 350px;
+      }
+
+      img.path-progress-graphic-desktop {
+        display: none;
+      }
+
+      img.path-progress-graphic-mobile {
+        display: initial;
+      }
+
+      .img-container-wrapper {
+        max-width: 200px;
+      }
+
+      #topContent {
+        margin-top: 0;
+        padding: 5px 15px;
+        /* padding: 15px; */
+      }
+
+      .instructions p {
+        font-size: 1.3em;
+      }
+
+      #topContent h1 {
+        font-size: 1.2em;
+        padding-bottom: 15px;
+      }
+
+      .img-container-wrapper {
+        max-width: 200px;
+      }
+
+      .img-container {
+        height: 90px;
+        background-position: 0 -2px;
+      }
+
+      input.inline-with-button {
+        margin-right: initial;
+        display: block;
+        width: 100% !important;
+        float: left;
+        border-top-right-radius: 5px !important;
+        border-bottom-right-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+      }
+
+      button.inline-with-input {
+        border: 1px solid #1cbe65;
+        background: white;
+        color: #1cbe65;
+        display: inline-block;
+        height: 35px;
+        margin-left: 0;
+        width: 100%;
+        float: left;
+        border-radius: 5px;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+      }
+    }
+
+  </style>
+  <div id="topBar"></div>
+  <div id="topContent" class="content shadow">
+    <div class="path-progress-graphic">
+      <img class="path-progress-graphic-desktop" src="https://producttestingusa.com//img/path-progress-slim-lg-alt.png">
+      <img class="path-progress-graphic-mobile" src="https://producttestingusa.com//img/path-progress-slim.png">
+    </div>
+    <div class="img-container-wrapper">
+      <div class="img-container"
+        style="background-image: url(https://producttestingusa.com/uploads/product_images/862_product.jpeg);"></div>
+    </div>
+    <div class="instructions">
+      <p>You are nearly there {{ user.firstName}}...<br>
+        Check out our partner's deals &amp; discounts to complete your registration. </p>
+    </div>
+    <div class="relative">
+      <div class="path-arrow-graphic">
+        <img src="https://producttestingusa.com//img/path-arrow.png">
+      </div>
+    </div>
+  </div>
+
+  <div id="mainCont" data-enabled="0" class="content shadow">
+    <p class="center" style="font-size: 11px;">
+      <i>
+        When you tick “yes” to any of the offers below you consent to receive by email, SMS, and telephone calls special
+        offers, discounts and partner deals from our third-party advertising partners who sponsor this site. By ticking
+        the option “no” you are not discriminated against and still have the option to participate in product testing
+        initiatives.
+      </i>
+    </p>
+
+
+
+    <form id="campaignsForm" method="POST" action="" novalidate="novalidate">
+      <input type="hidden" name="postback" value="1">
+      <input type="hidden" id="progressPercentage" value="20">
+
+      <div class="campaign" data-campaigntype="cpl" data-campaignid="342e6ff-249m" data-user-interaction="top"
+        data-cplcampaign="1" *ngFor="let productQuestion of productQuestions">
+        <div class="description" style="margin: 0; padding: 0">
+          <img style="width:100%" loading="lazy" src="https://us.coregcdn.com/images/90f3fa1_1620724294.jpg"><br><br>
+          <p style="font-weight: 900"> {{ productQuestion.QuestionStatement}} </p>
+        </div>
+        <div class="interaction top ">
+          <p class="questionyn"></p>
+          <p><span style="font-size:14px"><span style="font-family:arial,helvetica,sans-serif">Choose <strong>YES
+                </strong>to enter today!</span></span></p>
+          <p></p>
+
+
+          <div class="answersHolder table ">
+            <div class="row">
+              <div class="answerHolderCpl cell nobg " data-validanswer="" data-questionid="12311" data-answerid="25112">
+                <div class="answer">
+                  <div class="checkBox "></div>
+                  No
+                </div>
+              </div>
+              <div class="answerHolderCpl cell yesbg " data-validanswer="1" data-questionid="12311"
+                data-answerid="25111"
+                onclick="fireCplLead('//widget.coreglead.com/cpl/link/342e6ff/249m', '342e6ff-249m')">
+                <div class="answer">
+                  <div class="checkBox "></div>
+                  Yes
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="thankyou">Thank you!</p>
+        <input type="hidden" name="campaigns[]" value="342e6ff-249m">
+      </div>
+
+
+
+
+
+      <input type="hidden" name="coregCampaignCounter" value="15">
+
+      <p class="center">
+        <button id="submitButton" type="button" (click)="submitReview()">Continue!</button>
+      </p>
+      <input type="hidden" name="xxTrustedFormToken" id="xxTrustedFormToken_0"
+        value="https://cert.trustedform.com/884ad4981add9d8d1c85f08b1b35ee19b6f33bd9"><input type="hidden"
+        name="xxTrustedFormCertUrl" id="xxTrustedFormCertUrl_0"
+        value="https://cert.trustedform.com/884ad4981add9d8d1c85f08b1b35ee19b6f33bd9"><input type="hidden"
+        name="xxTrustedFormPingUrl" id="xxTrustedFormPingUrl_0"
+        value="https://ping.trustedform.com/0.vbLC1nfYviQqA8PgJmIlMxpxUmgw60QrqVK8qmdSFnHKzBOjNNwJTDSf-_rbh8RHqD5_j1gG.HmOecIbfaFOq_6v2vravqQ.bzkGXSZPBxNN2X4rMu3Bxg">
+    </form>
+  </div>
+  <form id="cplForm" method="POST" target="_blank" action="#">
+    <input type="hidden" name="siteid" value="44e40e2">
+    <input type="hidden" name="pathid" value="ef3a4ac">
+    <input type="hidden" name="title" value="Mr">
+    <input type="hidden" name="first_name" value="Hamza">
+    <input type="hidden" name="last_name" value="Khan">
+    <input type="hidden" name="gender" value="male">
+    <input type="hidden" name="phone" value="">
+    <input type="hidden" name="address" value="PO Box Y">
+    <input type="hidden" name="town" value="Lake Arthur">
+    <input type="hidden" name="county" value="Louisiana">
+    <input type="hidden" name="postcode" value="70549-0025">
+    <input type="hidden" name="country" value="United States of America">
+    <input type="hidden" name="country_code" value="US">
+    <input type="hidden" name="dob" value="1995-09-29">
+    <input type="hidden" name="email" value="hkhan1241@gmail.com">
+    <input type="hidden" name="epi" value="PTUSA-6722287-[lead_campaignid]">
+    <input type="hidden" name="site_userid" value="6722287">
+    <input type="hidden" name="dt_registered" value="2022-01-22 08:31:15">
+    <input type="hidden" name="blackbox_id" value="16108738">
+    <input type="hidden" name="path_optimised" value="1">
+    <input type="hidden" name="analytics_extra_1" value="5">
+
+    <input type="hidden" name="campaign_source" value="organic">
+    <input type="hidden" name="campaign_medium" value="Organic">
+    <input type="hidden" name="campaign_terms" value="organic">
+    <input type="hidden" name="campaign_content" value="desktop-2">
+    <input type="hidden" name="campaign_name" value="organic">
+
+    <input type="hidden" name="xxTrustedFormToken" id="xxTrustedFormToken_1"
+      value="https://cert.trustedform.com/884ad4981add9d8d1c85f08b1b35ee19b6f33bd9"><input type="hidden"
+      name="xxTrustedFormCertUrl" id="xxTrustedFormCertUrl_1"
+      value="https://cert.trustedform.com/884ad4981add9d8d1c85f08b1b35ee19b6f33bd9"><input type="hidden"
+      name="xxTrustedFormPingUrl" id="xxTrustedFormPingUrl_1"
+      value="https://ping.trustedform.com/0.vbLC1nfYviQqA8PgJmIlMxpxUmgw60QrqVK8qmdSFnHKzBOjNNwJTDSf-_rbh8RHqD5_j1gG.HmOecIbfaFOq_6v2vravqQ.bzkGXSZPBxNN2X4rMu3Bxg">
+  </form>
+
+  <script>
+    myOneSignal.ready(function () {
+      myOneSignal.addTags({
+        latestCategory: 'Technology'
+      })
+    })
+
+  </script>
+
+  <script type="text/javascript">
+    window._tfa = window._tfa || [];
+    _tfa.push({
+      notify: 'mark',
+      type: 'Supression_New_PTUS'
+    });
+
+  </script>
+  <script src="//cdn.taboola.com/libtrc/submissiontechnologyus-sc/tfa.js"></script>
+
+
+  <script type="text/javascript">
+    var leadIdCampaignId = "5ec9c777-83a9-989c-b1c1-333f2b67993e";
+
+  </script>
+
+  <script>
+    if (!Modernizr.inputtypes.date) {
+      $('.noDatePicker').html('No datepicker? Format your date YYYY-MM-DD')
+    }
+
+  </script>
+
+
+  <script src="/js/jquery.validate.min.js"></script>
+
+  <script src="/js/ptusa/path/campaigns.js?v=1.0.13"></script>
+  <!--
+1//Valid Mobile -->
+
+  <!-- Start Quantcast Tag -->
+  <script type="text/javascript">
+    var _qevents = _qevents || [];
+    (function () {
+      var elem = document.createElement('script');
+      elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") +
+        ".quantserve.com/quant.js";
+      elem.async = true;
+      elem.type = "text/javascript";
+      var scpt = document.getElementsByTagName('script')[0];
+      scpt.parentNode.insertBefore(elem, scpt);
+    })();
+    _qevents.push({
+      qacct: "p-6p5bJvGYk0vQR"
+    });
+
+  </script>
+  <noscript>
+    <img src="//pixel.quantserve.com/pixel/p-6p5bJvGYk0vQR.gif?labels=_fp.event.Default" style="display: none;"
+      border="0" height="1" width="1" alt="Quantcast" />
+  </noscript>
+  <!-- End Quantcast tag -->
+  <div style="text-align:center;margin:15px 0;">
+    <a href="https://privacy.submissiontechnology.co.uk/form/" target="_blank" rel="noopener nofollow">
+      <button
+        style="background:#3b3b3b;color:#f4f4f4;padding:10px;font-size:16px;border:none;border-radius:3px;cursor:pointer;">
+        Do Not Sell My Personal Data
+      </button>
+    </a>
+  </div>
+
+  <div class="center">
+    <p>Wholly owned by Submission Technology Ltd, trading at The Beater House, Turkey Mill, Maidstone, Kent, England,
+      ME14 5PP</p>
+    <p>dpo@submissiontechnology.co.uk</p>
+  </div>
+
+
+
+
+  <div>
+    <div class="grecaptcha-badge" data-style="bottomright"
+      style="width: 256px; height: 60px; display: block; transition: right 0.3s ease 0s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;">
+      <div class="grecaptcha-logo"><iframe title="reCAPTCHA"
+          src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LeNVb8UAAAAAP_vvAEDpoiFzqfpeYU4Im8AVoD0&amp;co=aHR0cHM6Ly9wcm9kdWN0dGVzdGluZ3VzYS5jb206NDQz&amp;hl=en&amp;v=dPctOHA2ifhWm5WzFM_B5TjT&amp;size=invisible&amp;cb=4wvcfui5k7ag"
+          width="256" height="60" role="presentation" name="a-3dhvwaa5bfyk" frameborder="0" scrolling="no"
+          sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe>
+      </div>
+      <div class="grecaptcha-error"></div><textarea id="g-recaptcha-response-100000" name="g-recaptcha-response"
+        class="g-recaptcha-response"
+        style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
+    </div><iframe style="display: none;"></iframe>
+  </div>
+  <div id="LeadiD-wrapper-element" class=" LeadiD-ignore-mutation"
+    style="width: 1px; height: 1px; overflow: hidden; position: fixed; left: -1px; top: 0px;"></div>
+  <div id="onesignal-bell-container"
+    class="onesignal-bell-container onesignal-reset onesignal-bell-container-bottom-right">
+    <div id="onesignal-bell-launcher"
+      class="onesignal-bell-launcher onesignal-bell-launcher-md onesignal-bell-launcher-bottom-right onesignal-bell-launcher-theme-default onesignal-bell-launcher-active"
+      style="bottom: 2px; right: 2px;">
+      <div class="onesignal-bell-launcher-button"><svg class="onesignal-bell-svg" xmlns="http://www.w3.org/2000/svg"
+          width="99.7" height="99.7" viewBox="0 0 99.7 99.7"
+          style="filter: drop-shadow(0 2px 4px rgba(34,36,38,0.35));; -webkit-filter: drop-shadow(0 2px 4px rgba(34,36,38,0.35));;">
+          <circle class="background" cx="49.9" cy="49.9" r="49.9" style="fill: rgb(0, 0, 0);"></circle>
+          <path class="foreground"
+            d="M50.1 66.2H27.7s-2-.2-2-2.1c0-1.9 1.7-2 1.7-2s6.7-3.2 6.7-5.5S33 52.7 33 43.3s6-16.6 13.2-16.6c0 0 1-2.4 3.9-2.4 2.8 0 3.8 2.4 3.8 2.4 7.2 0 13.2 7.2 13.2 16.6s-1 11-1 13.3c0 2.3 6.7 5.5 6.7 5.5s1.7.1 1.7 2c0 1.8-2.1 2.1-2.1 2.1H50.1zm-7.2 2.3h14.5s-1 6.3-7.2 6.3-7.3-6.3-7.3-6.3z"
+            style="fill: white;"></path>
+          <ellipse class="stroke" cx="49.9" cy="49.9" rx="37.4" ry="36.9" style="stroke: white;"></ellipse>
+        </svg></div>
+      <div class="onesignal-bell-launcher-badge"
+        style="filter: drop-shadow(0 2px 4px rgba(34,36,38,0));; -webkit-filter: drop-shadow(0 2px 4px rgba(34,36,38,0));;">
+      </div>
+      <div class="onesignal-bell-launcher-message">
+        <div class="onesignal-bell-launcher-message-body">Subscribe to notifications</div>
+      </div>
+      <div class="onesignal-bell-launcher-dialog"
+        style="filter: drop-shadow(0px 2px 2px rgba(34,36,38,.15));; -webkit-filter: drop-shadow(0px 2px 2px rgba(34,36,38,.15));;">
+        <div class="onesignal-bell-launcher-dialog-body"></div>
+      </div>
+    </div>
+  </div>
+</body>

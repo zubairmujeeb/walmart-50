@@ -1,0 +1,444 @@
+body {
+  margin: 0px;
+}
+*,
+::before,
+::after {
+  box-sizing: border-box !important;
+}
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#topBar {
+  background: url("/assets/PTUSA_logo.svg") center center / contain no-repeat rgb(61, 62, 62);
+  border: 3px solid rgb(61, 62, 62);
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+#topContent {
+  background: rgba(13, 12, 12, 0.8);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 30px;
+  margin-top: 20px;
+}
+.content {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.shadow {
+  box-shadow: rgba(0, 0, 0, 0.29) 0px 0px 26px 0px;
+}
+#topContent {
+  background: rgb(61, 61, 61);
+}
+.path-progress-graphic {
+  width: 100%;
+  margin-bottom: 15px;
+}
+img,
+legend {
+  border: 0px;
+}
+.path-progress-graphic img {
+  width: 100%;
+  max-width: 700px;
+}
+img.path-progress-graphic-desktop {
+  display: initial;
+}
+img.path-progress-graphic-mobile {
+  display: none;
+}
+.img-container-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 500px;
+}
+.img-container {
+  height: 290px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+}
+.instructions p {
+  font-size: 1.5em;
+}
+.relative {
+  position: relative;
+}
+.path-arrow-graphic {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 10px;
+}
+.path-arrow-graphic img {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#mainCont {
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.center {
+  text-align: center;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0px;
+}
+input {
+  line-height: normal;
+}
+.campaign {
+  border: 1px solid rgb(204, 204, 204);
+  padding: 20px;
+  margin: 10px 50px;
+}
+.campaign .description {
+  margin-bottom: 1em;
+}
+.interaction {
+  margin-top: 0.7em;
+}
+.questionyn {
+  margin: 0px 0px 0.4em !important;
+}
+b,
+optgroup,
+strong {
+  font-weight: 700;
+}
+.table {
+  display: table;
+}
+.answersHolder {
+  width: 100%;
+}
+.answersHolder::after,
+.answerHolderCpl::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.row {
+  display: table-row;
+}
+.cell {
+  display: table-cell;
+  vertical-align: top;
+}
+.nobg {
+  background: rgb(248, 118, 118) !important;
+}
+.answerHolderCpl {
+  width: 50%;
+  vertical-align: middle;
+  background: none !important;
+}
+.answer {
+  text-align: center;
+  padding: 15px;
+  cursor: pointer;
+}
+.checkBox {
+  width: 26px;
+  height: 26px;
+  border-radius: 5px;
+  border: 1px solid rgb(204, 204, 204);
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  background-image: url("/assets/tickPath.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.yesbg {
+  background: rgb(105, 243, 127) !important;
+}
+.campaign .thankyou {
+  text-align: center;
+  color: rgb(100, 98, 98);
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 0.3em;
+  display: none;
+}
+.campaign .thankyou {
+  padding: 15px 5px 5px;
+  margin: 0px;
+}
+button {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+#submitButton {
+  background: rgb(28, 190, 101);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 40px;
+  font-size: 20px;
+}
+a {
+  background-color: transparent;
+}
+a:active,
+a:hover {
+  outline: 0px;
+}
+a {
+  text-decoration: none;
+}
+pre,
+textarea {
+  overflow: auto;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+@media (min-width: 1100px) {
+  body {
+    background-image: url("/assets/862_background.jpeg");
+    background-position: center top;
+    background-size: 100%;
+    background-attachment: fixed !important;
+  }
+}
+@media (max-width: 768px) {
+  #topContent {
+    margin-top: 0px;
+    padding: 5px 15px;
+  }
+}
+@media (max-width: 768px) {
+  .path-progress-graphic img {
+    max-width: 350px;
+  }
+}
+@media (max-width: 768px) {
+  img.path-progress-graphic-desktop {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .path-progress-graphic img {
+    max-width: 350px;
+  }
+}
+@media (max-width: 768px) {
+  img.path-progress-graphic-mobile {
+    display: initial;
+  }
+}
+@media (max-width: 768px) {
+  .img-container-wrapper {
+    max-width: 270px;
+  }
+}
+@media (max-width: 768px) {
+  .img-container-wrapper {
+    max-width: 200px;
+  }
+}
+@media (max-width: 768px) {
+  .img-container-wrapper {
+    max-width: 200px;
+  }
+}
+@media (max-width: 768px) {
+  .img-container {
+    height: 160px;
+  }
+}
+@media (max-width: 768px) {
+  .img-container {
+    height: 90px;
+    background-position: 0px -2px;
+  }
+}
+@media (max-width: 768px) {
+  .instructions p {
+    font-size: 1.3em;
+  }
+}
+@media (max-width: 700px) {
+  .campaign {
+    margin: 10px 0px !important;
+  }
+}
+@media (max-width: 768px) {
+  .campaign {
+    padding: 15px;
+    margin: 10px 0px;
+  }
+}
+@media (max-width: 700px) {
+  .campaign {
+    margin: 10px 0px !important;
+  }
+}
+@media (max-width: 768px) {
+  .campaign {
+    padding: 15px;
+    margin: 10px 0px;
+  }
+}
+@media (max-width: 700px) {
+  .campaign {
+    margin: 10px 0px !important;
+  }
+}
+@media (max-width: 768px) {
+  .campaign {
+    padding: 15px;
+    margin: 10px 0px;
+  }
+}
+@media (max-width: 700px) {
+  .campaign {
+    margin: 10px 0px !important;
+  }
+}
+@media (max-width: 768px) {
+  .campaign {
+    padding: 15px;
+    margin: 10px 0px;
+  }
+}
+@media (max-width: 700px) {
+  .campaign {
+    margin: 10px 0px !important;
+  }
+}
+@media (max-width: 768px) {
+  .campaign {
+    padding: 15px;
+    margin: 10px 0px;
+  }
+}
+@media (max-width: 700px) {
+  .campaign {
+    margin: 10px 0px !important;
+  }
+}
+@media (max-width: 768px) {
+  .campaign {
+    padding: 15px;
+    margin: 10px 0px;
+  }
+}
+@media (max-width: 700px) {
+  .campaign {
+    margin: 10px 0px !important;
+  }
+}
+@media (max-width: 768px) {
+  .campaign {
+    padding: 15px;
+    margin: 10px 0px;
+  }
+}
+@media (max-width: 700px) {
+  .campaign {
+    margin: 10px 0px !important;
+  }
+}
+@media (max-width: 768px) {
+  .campaign {
+    padding: 15px;
+    margin: 10px 0px;
+  }
+}
+@media (max-width: 700px) {
+  .campaign {
+    margin: 10px 0px !important;
+  }
+}
+@media (max-width: 768px) {
+  .campaign {
+    padding: 15px;
+    margin: 10px 0px;
+  }
+}
+@media (max-width: 700px) {
+  .campaign {
+    margin: 10px 0px !important;
+  }
+}
+@media (max-width: 768px) {
+  .campaign {
+    padding: 15px;
+    margin: 10px 0px;
+  }
+}
+@media (max-width: 700px) {
+  .campaign {
+    margin: 10px 0px !important;
+  }
+}
+@media (max-width: 768px) {
+  .campaign {
+    padding: 15px;
+    margin: 10px 0px;
+  }
+}
+@media (max-width: 700px) {
+  .campaign {
+    margin: 10px 0px !important;
+  }
+}
+@media (max-width: 768px) {
+  .campaign {
+    padding: 15px;
+    margin: 10px 0px;
+  }
+}
+@media (max-width: 700px) {
+  .campaign {
+    margin: 10px 0px !important;
+  }
+}
+@media (max-width: 768px) {
+  .campaign {
+    padding: 15px;
+    margin: 10px 0px;
+  }
+}
+@media (max-width: 700px) {
+  .campaign {
+    margin: 10px 0px !important;
+  }
+}
+@media (max-width: 768px) {
+  .campaign {
+    padding: 15px;
+    margin: 10px 0px;
+  }
+}
+@media (max-width: 700px) {
+  .campaign {
+    margin: 10px 0px !important;
+  }
+}
+@media (max-width: 768px) {
+  .campaign {
+    padding: 15px;
+    margin: 10px 0px;
+  }
+}

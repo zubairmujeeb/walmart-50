@@ -1,0 +1,111 @@
+
+  <app-header></app-header>
+<div class="container">
+  <br>
+
+  <h2 id="reviewers">Admin Dashboard</h2><br><br>
+  <h3 class="text-center mt-5 bg-h"> Create Product Review</h3>
+  <!-- Second Step -->
+  <div class="row setup-content">
+    <div class="col-md-6 shadow-lg mb-5 bg-white rounded que-area">
+      <div class="form-group md-form">
+        <label class="required">Product Name</label>
+        <input id="quiz-editor" name="quizEditor" class="form-control" rows="5" [(ngModel)]="productTitle"/>
+      </div><br>
+      <div class="form-group md-form">
+        <label class="required">Product Price</label>
+        <input id="quiz-editor" name="quizEditor" class="form-control" rows="5" [(ngModel)]="productPrice"/>
+      </div><br>
+      <div class="form-group md-form">
+        <label class="required">Product Description</label>
+        <textarea id="quiz-editor" name="quizEditor" class="form-control" rows="3" [(ngModel)]="productDescription">
+                  </textarea>
+      </div><br>
+      <div class="form-group md-form">
+        <label class="required">Product Image</label>
+        <input type="file" id="quiz-editor" name="quizEditor" class="form-control" rows="5" />
+      </div><br>
+      <div class="form-group md-form">
+        <label class="required">Question Statement</label>
+        <textarea id="quiz-editor" name="quizEditor" class="form-control" rows="5" [(ngModel)]="newQuestion.questionStatement">
+                  </textarea>
+      </div><br>
+
+      <div class="form-group " *ngIf="answerChoices.length >0">
+        <label class="required">Choices</label>
+        <div class="row" *ngFor="let answerChoice of answerChoices; let $index = index">
+          <div class="col-md-6">
+            <p>{{answerChoice.optionStatement}}</p>
+
+          </div>
+          <div class="col-md-6">
+            <i class="fa fa-times cr" aria-hidden="true" (click)="removeItem($index)">X</i>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group md-form"  >
+        <div class="row">
+          <div class="col-md-6">
+            <input type="text" class="form-control" placeholder="Add new choice" [(ngModel)]="newChoice">
+          </div>
+          <div class="col-md-6">
+            <input type="button" class="btn btn-primary " value="Add" (click)="addChoice()">
+          </div>
+        </div>
+
+          <div class="row"  style="margin-top: 30px;" *ngIf="answerChoices.length > 1">
+          <div class="col-md-12">
+            <label class="required">Select Correct Choice</label>
+          </div>
+          <div class="col-md-12">
+            <label *ngFor="let choice of answerChoices" style="margin-right: 15px;">
+              <input type="radio" value="{{choice.optionStatement}}" [(ngModel)]="correctAnswer"
+                style="margin-right: 5px;">
+              {{choice.optionStatement}}
+            </label>
+          </div>
+        </div>
+      </div><br>
+
+      <div class="row">
+        <button class="btn btn-success btn-lg" (click)="addQuestion()" [disabled]="((newQuestion.questionStatement).length < 2) || (newQuestion.isQuiz && !correctAnswer) ">
+          Add Question
+        </button>
+      </div>
+    </div>
+
+    <div class="row col-md-6 shadow-lg mb-5 bg-white rounded que-area offset-1" *ngIf="quizQuestions.length > 0">
+      <h4>Product Questions</h4> <br> <br>
+      <div class="col-md-12">
+        <div class="row" *ngFor="let question of quizQuestions; let $index = index">
+          <div class="col-10">
+            <p class="que-state">Q{{$index+1}}. {{question.QuestionStatement}}</p>
+          </div>
+          <div class="col-2">
+            <span class="fa fa-times cr text-dangerous" aria-hidden="true" (click)="removeQuestion($index)">X</span>
+
+          </div>
+          <ol class="opt-list"  type="A">
+            <div class="row">
+              <li *ngFor="let option of question.quizQuestionOptions" class="col-6">
+                <p [ngClass]="{'true-opt': option.isCorrect}">{{ option.optionStatement }} </p>
+              </li>
+
+            </div>
+          </ol>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <button class="btn btn-info btn-rounded" type="button" (click)="saveQuizQuestions()">
+          Save Review
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<app-footer></app-footer>

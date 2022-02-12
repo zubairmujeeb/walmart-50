@@ -1,0 +1,123 @@
+body {
+  margin: 0px;
+}
+*,
+::before,
+::after {
+  box-sizing: border-box !important;
+}
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#topBar {
+  background: url("/assets/PTUSA_logo.svg") center center / contain no-repeat rgb(61, 62, 62);
+  border: 3px solid rgb(61, 62, 62);
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+#topContent {
+  background: rgba(13, 12, 12, 0.8);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 30px;
+  margin-top: 20px;
+}
+.content {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.shadow {
+  box-shadow: rgba(0, 0, 0, 0.29) 0px 0px 26px 0px;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0px;
+}
+h1 {
+  padding: 0px;
+  margin: 0px;
+}
+#mainCont {
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  margin-bottom: 20px;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0px;
+}
+input {
+  line-height: normal;
+}
+.center {
+  text-align: center;
+}
+#siteRecommendations {
+  text-align: center;
+}
+hr {
+  box-sizing: content-box;
+  height: 0px;
+}
+hr {
+  height: 1px;
+  border: none;
+  background-color: rgb(204, 204, 204);
+  color: rgb(204, 204, 204);
+}
+a {
+  background-color: transparent;
+}
+a:active,
+a:hover {
+  outline: 0px;
+}
+a {
+  text-decoration: none;
+}
+#siteRecommendations a {
+  text-decoration: none;
+  color: rgb(34, 34, 34);
+}
+img,
+legend {
+  border: 0px;
+}
+#siteRecommendations img {
+  max-width: 100%;
+  max-height: 200px;
+  border: 1px solid rgb(204, 204, 204);
+}
+button {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+#submitButton {
+  background: rgb(28, 190, 101);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 40px;
+  font-size: 20px;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+@media (min-width: 1100px) {
+  body {
+    background-image: url("/assets/862_background.jpeg");
+    background-position: center top;
+    background-size: 100%;
+    background-attachment: fixed !important;
+  }
+}

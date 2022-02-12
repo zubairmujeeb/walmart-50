@@ -1,0 +1,604 @@
+<div class="navigation" >
+  <div class="container container-no-padding">
+    <div class="row row-no-padding">
+      <div class="col-xs-12 navigation-header">
+        <a class="navbar-brand" href="/">
+          <img src="https://producttestingusa.com//img/ptusa/PTUSA_logo.svg" alt="Product Testing USA">
+        </a>
+        <span class="nav-menu-icon navMenu pull-right active" (click)="switchMenuDD()"><img src="/assets/fa_bars.png"
+            width="20px" height="20px"></span>
+        <span class="nav-menu-icon pull-right" style="margin-right: 3px;" title="Log in"><img src="/assets/login.png"
+            width="20px" height="20px"
+            onclick="window.location.href = '/login?return='+encodeURIComponent(window.location.pathname+window.location.search);"
+            class="fa fa-sign-in"></span>
+      </div>
+      <div class="col-sm-4 hidden-xs"></div>
+      <div class="col-sm-8 col-xs-12" *ngIf="showDD">
+        <div class="navigation-dropdown">
+          <ul class="mainMenu" style="">
+            <li class="sub-menu hasSubMenu">
+              Reviewer Opportunities
+              <ul class="isSubMenu" style="display: none;">
+                <li><a href="/category/mystery-shoppers">MysteryShopping</a></li>
+                <li><a href="/category/secret-diners">Secret Dining</a></li>
+                <li><a href="/category/technology">Technology</a></li>
+                <li><a href="/category/home-garden">Home &amp; Garden</a></li>
+                <li><a href="/category/baby">Baby Products</a></li>
+                <li><a href="/category/fashion">Fashion &amp; Beauty</a></li>
+                <li><a href="/category/gaming">Gaming</a></li>
+                <li><a href="/category/holidays">Holidays</a></li>
+              </ul>
+            </li>
+            <li><a href="/latest-reviewers">Latest Reviews</a></li>
+            <li class=""><a href="/faqs">Help</a></li>
+            <li class=""><a href="/login">Log In</a></li>
+            <li class="visible-sm visible-xs"><a href="/p/about-us">About Us</a></li>
+            <li class="visible-sm visible-xs"><a href="/p/terms">Terms &amp; Conditions</a></li>
+            <li class="visible-sm visible-xs"><a href="/faqs">FAQS</a></li>
+            <li class="visible-sm visible-xs"><a href="/affiliate_program">Affiliate Program</a></li>
+            <li class="visible-sm visible-xs"><a href="/unsubscribe">Unsubscribe</a></li>
+            <li class="visible-sm visible-xs social-menu">
+              <a href="https://www.facebook.com/ProductTestingUSA" target="_blank">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+
+              <a href="https://twitter.com/ProductTestUSA" target="_blank">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+
+              <a href="https://www.youtube.com/channel/UCUR2zHD2XuIDAVQ4MVEqApQ" target="_blank">
+                <i class="fa fa-youtube" aria-hidden="true"></i>
+              </a>
+
+              <a href="https://www.instagram.com/producttestingusa/" target="_blank">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content-body" style="height: auto !important;" [ngStyle]="{ 'opacity': showModal === true ? '0.6': '1' }">
+  <style>
+    @media (max-width: 767px) {
+      #modalSignUp {
+        margin-top: 15px;
+      }
+    }
+
+  </style>
+  <span id="siteData" style="display: none;" data-site="870"></span>
+  <div class="flex" style="height: auto !important;">
+    <div class="pt-panel panel-1">
+      <div class="container">
+        <div class="row row-no-padding">
+
+          <div class="item">
+
+            <h1 class="mobile-only flowTypeMobileHeader">{{ product.Description }}</h1>
+            <h4 class="mobile-only">Worth ${{ product.Price }}</h4>
+
+            <div class="col-sm-7">
+              <img id="productImage" alt="Petcube Pet Camera"
+                src="https://producttestingusa.com//uploads/product_images/870_product.jpeg">
+            </div>
+
+            <div class="col-sm-5 text-center product-title-container">
+              <h1 class="not-mobile">{{ product.Description }}</h1>
+              <h4 class="not-mobile">Worth ${{ product.Price }}</h4>
+
+              <p>
+                Register your details with Product Testing USA for a chance to be selected. </p>
+
+              <div class="checkbox">
+                <div id="tcError" class="text-danger" [ngStyle]="{'color':acceptedTerms ? 'green' : 'red' }">You must accept our terms and conditions to
+                  sign up!</div>
+                <input type="checkbox" id="pageTc" [(ngModel)]="acceptedTerms"> <span>If you sign up for our website,
+                  then you are agreeing to our <a href="/p/terms-conditions" style="color: #bcbcbc;"
+                    target="_blank">Terms and Conditions</a>
+                  and agree to be contacted by email by our <a target="_blank" style="color: #bcbcbc;"
+                    href="/sponsors">sponsors</a>
+                  and receive emails from us.
+                  You can <a target="_blank" style="color: #bcbcbc;" rel="noopener"
+                    href="https://privacyportal-eu-cdn.onetrust.com/dsarwebform/d9afd607-0c61-48f3-a326-15c02a42a823/463b70f2-72b1-4bfe-aa47-cc4ab765ffdd.html">opt-out</a>
+                  at any time.
+                  Our privacy notice for the programme can be found here: <a style="color: #bcbcbc;"
+                    href="/p/privacy-policy" target="_blank">PRIVACY NOTICE</a>.</span>
+              </div>
+
+              <button id="modalSignUp" (click)="showOrHideModal()" class="btn btn-pt btn-red" style="
+                                      color: #ffffff;
+                                      background-color: #e89134;
+                                      font-size: 18px;
+                                      padding: 10px;
+                                      ">
+                <span id="signup-text" >SIGN UP TODAY</span>
+              </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="pt-panel panel-2">
+      <div class="container">
+        <div class="row row-no-padding">
+          <div class="col-sm-4">
+            <div class="box">
+              <h4>Apply to test</h4>
+              <p>Click the ‘SIGN UP TODAY’ button and enter your details. We'll contact you by email if you’re selected
+                as a reviewer!</p>
+              <div class="circle">1</div>
+              <div class="arrow-left"></div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="box">
+              <h4>Complete Questionnaire</h4>
+              <p>Work your way through the offers based Questionnaire in full to complete your registration.</p>
+
+              <div class="circle">2</div>
+              <div class="arrow-right"></div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="box">
+              <h4>Receive Product</h4>
+              <p>If selected as our reviewer, we’ll confirm via email. You’ll then be sent your product or gift card!
+              </p>
+              <div class="circle">3</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-panel panel-3" style="height: auto !important;">
+      <div class="container" style="height: auto !important;">
+        <div class="row" style="height: auto !important;">
+          <div class="col-sm-12" style="height: auto !important; min-height: 0px !important;">
+            <div class="row vidPoss" style="height: auto !important;">
+              <div class="col-xs-12" style="height: auto !important; min-height: 0px !important;">
+
+                <h4>So What Happens Now?</h4>
+
+                <p>Register your details and you will then be presented with an offers based questionnaire. Most people
+                  opt into 3 or 4 offers; please only opt into those you're interested in.</p>
+
+                <p>To be eligible for selection, you must complete the questionnaire in full. If you are selected, you
+                  will be contacted via email.</p>
+
+                <p>As per our T&amp;Cs, Review Requirements are:</p>
+                <ul>
+                  <li>500+ word written review</li>
+                  <li>Video review</li>
+                  <li>Photos</li>
+                </ul>
+
+                <p>All reviewers will be sent a confirmation letter, checklist of points to discuss, and an A4 poster
+                  for photos.</p>
+
+                <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+                <div style="margin-top: 30px; height: auto !important;">
+                  <div class="text-center" style="font-size: 12px">
+                    SPONSORED CONTENT
+                  </div>
+                  <ins class="adsbygoogle" style="display: block; height: 280px;"
+                    data-ad-client="ca-pub-5132814465015404" data-ad-slot="1851474583" data-ad-format="auto"
+                    data-full-width-responsive="true" data-adsbygoogle-status="done" data-ad-status="filled"><ins
+                      id="aswift_0_expand" tabindex="0" title="Advertisement" aria-label="Advertisement"
+                      style="border: none; height: 280px; width: 1074px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-table;"><ins
+                        id="aswift_0_anchor"
+                        style="border: none; height: 280px; width: 1074px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: block; overflow: visible;"><iframe
+                          id="aswift_0" name="aswift_0"
+                          style="left:0;position:absolute;top:0;border:0;width:1074px;height:280px;"
+                          sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+                          width="1074" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0"
+                          hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true"
+                          src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-5132814465015404&amp;output=html&amp;h=280&amp;slotname=1851474583&amp;adk=1312218956&amp;adf=1949972538&amp;pi=t.ma~as.1851474583&amp;w=1074&amp;fwrn=4&amp;fwrnh=100&amp;lmt=1643118542&amp;rafmt=1&amp;psa=1&amp;format=1074x280&amp;url=https%3A%2F%2Fproducttestingusa.com%2F870%2Fpetcube-pet-camera&amp;flash=0&amp;fwr=0&amp;fwrattr=true&amp;rpe=1&amp;resp_fmts=3&amp;wgl=1&amp;uach=WyJXaW5kb3dzIiwiMTAuMC4wIiwieDg2IiwiIiwiOTcuMC40NjkyLjcxIixbXSxudWxsLG51bGwsIjY0Il0.&amp;dt=1643118542585&amp;bpp=5&amp;bdt=321&amp;idt=61&amp;shv=r20220119&amp;mjsv=m202201200301&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie=ID%3D2e3f0137313071ad-2238dba013cf0011%3AT%3D1642839655%3ART%3D1642839655%3AS%3DALNI_MaB1QSMwG5cj5nGX5DLP9JErgTH0w&amp;correlator=6311458560693&amp;frm=20&amp;pv=2&amp;ga_vid=145303048.1642839679&amp;ga_sid=1643118543&amp;ga_hid=1147974081&amp;ga_fc=1&amp;u_tz=300&amp;u_his=10&amp;u_h=864&amp;u_w=1536&amp;u_ah=834&amp;u_aw=1536&amp;u_cd=24&amp;u_sd=1.25&amp;dmc=8&amp;adx=223&amp;ady=1146&amp;biw=1519&amp;bih=731&amp;scr_x=0&amp;scr_y=0&amp;eid=44750774%2C44753738%2C21065725%2C21067496&amp;oid=2&amp;pvsid=1678658313893012&amp;pem=780&amp;tmod=454743393&amp;uas=0&amp;nvt=1&amp;ref=https%3A%2F%2Fproducttestingusa.com%2F&amp;eae=0&amp;fc=640&amp;brdim=0%2C0%2C0%2C0%2C1536%2C0%2C1536%2C834%2C1536%2C731&amp;vis=1&amp;rsz=%7C%7CeEbr%7C&amp;abl=CS&amp;pfx=0&amp;fu=128&amp;bc=31&amp;ifi=1&amp;uci=a!1&amp;btvi=1&amp;fsb=1&amp;xpc=UlQNkOIpp8&amp;p=https%3A//producttestingusa.com&amp;dtd=73"
+                          data-google-container-id="a!1" data-google-query-id="COeU6buFzfUCFXlNFQgdvsEImg"
+                          data-load-complete="true"></iframe></ins></ins></ins>
+                  <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+
+                  </script>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="pt-panel panel-5">
+      <div class="container">
+        <div class="row  text-center">
+          <div class="col-sm-6">
+            <div class="flex">
+              <h2 class="">Receive a Petcube Pet Camera to rate and review!</h2>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="flex">
+              <button class="btn btn-pt btn-red modalAltSignup" style="
+                                  color: #ffffff;
+                                  background-color: #e89134;
+                                  font-size: 18px;
+                                  padding: 10px;
+                                  ">
+                <i class="fa fa-chevron-right right-arrow-icon" aria-hidden="true"></i>
+                SIGN UP TODAY </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-panel panel-6">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-sm-6 mobile-grey">
+            <div class="foldAway-container">
+              <span class="title">FAQ's </span><i class="fa foldParent visible-xs fa-arrow-circle-down"
+                aria-hidden="true"></i>
+              <div class="foldAway">
+                <span class="question">Who is eligible to partake?</span>
+                <span class="answer">Anybody aged 18 years and over and residing in the USA may take part.</span>
+
+                <span class="question">How will my Personal Data be used?</span>
+                <span class="answer">Protection of our members' Personal Data is a top priority for Product Testing USA.
+                  We will use your Personal Data to predict which offers you may be interested in hearing about.</span>
+
+                <span class="question">Why must I answer all the questions in the survey to complete my entry?</span>
+                <span class="answer">To qualify for the product testing opportunity, we need to understand a little
+                  about you, your lifestyle and interests.</span>
+
+                <span class="question">How will I know I've been selected as a reviewer?</span>
+                <span class="answer">If you are selected as a reviewer, we will contact you via email in the first
+                  instance, using the email address you gave upon sign up. So, please ensure you use your primary email
+                  address to enter, and add us to your address book to ensure you receive our emails.</span>
+
+                <span class="question">Do you have a Facebook page?</span>
+                <span class="answer">Yes, please visit&nbsp;<a href="https://www.facebook.com/ProductTestingUSA"
+                    target="_blank">ProductTestingUSA</a>&nbsp;to see all the latest product testing opportunities,
+                  contests and to see all our product reviews.</span>
+
+                <span class="question">How does Product Testing USA make money?</span>
+                <span class="answer">As a specialist in market research and online opinion polls, manufacturers and
+                  advertisers pay us for our services</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 mobile-grey mobile-no-top">
+            <div class="foldAway-container">
+              <span class="title">No Spam Policy</span><i class="fa foldParent visible-xs fa-arrow-circle-down"
+                aria-hidden="true"></i>
+              <div class="foldAway">
+                <span class="question">We treat all Personal Data we hold on you confidentially and in accordance with
+                  our&nbsp;Privacy Notice.</span>
+                <span class="answer">You can opt-out of communication from Product Testing USA at any time, by clicking
+                  the unsubscribe link in our emails, or by heading to your Subscription Centre</span>
+              </div>
+            </div>
+            <div class="foldAway-container">
+              <span class="title">Reviewer Requirements</span><i class="fa foldParent visible-xs fa-arrow-circle-down"
+                aria-hidden="true"></i>
+              <div class="foldAway">
+                <span class="answer">Reviewers are required to provide a 500+ word written review, video review, and
+                  photos within 7 days of receipt of both the product or gift card, and confirmation letter. Usually,
+                  the letter and product/gift card will be sent out separately.</span>
+                <span class="answer">Along with the confirmation letter, reviewers receive a review checklist of points
+                  to discuss, and an A4 poster to use in photos.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <br>
+            <p><em>Product Testing USA is in no way partnered with, sponsored by or endorsed by any of the brands
+                featured or any of the listed products or retailers
+                shown on this site. Trademarks, service marks, logos, and/or domain names (including, without
+                limitation, the individual names of products and retailers) are the property of their respective
+                owners.</em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>
+
+<app-footer></app-footer>
+
+
+<div class="remodal-wrapper remodal-is-opened" [ngStyle]="{ 'display': showModal === true ? 'block': 'none' }">
+  <div class="remodal remodal-is-initialized remodal-is-opened" data-remodal-options="hashTracking: false"
+    style="padding: 0; max-width: 500px;" data-remodal-id="signup" tabindex="-1">
+
+    <script type="text/javascript"
+      src="https://services.postcodeanywhere.co.uk/js/captureplus-2.30.min.js?key=fk43-px97-cn68-uz53"></script>
+    <script src="/js/ptusa/captureplus.js?v=1.0.4"></script>
+
+
+    <style>
+      @keyframes pulse {
+        0% {
+          color: rgba(204, 204, 204, 0.3);
+        }
+
+        50% {
+          color: rgba(144, 197, 65, 0.5);
+        }
+
+        100% {
+          color: rgba(204, 204, 204, 0.3);
+        }
+      }
+
+      .clear {
+        display: flex;
+        align-items: center;
+      }
+
+      .touch-mobile-consent {
+        display: table;
+        border-radius: 50%;
+        height: 45px;
+        width: 45px;
+        border: 1px solid #cccccc;
+        text-align: center;
+        -webkit-box-shadow: 0px 0px 2px 3px rgba(189, 185, 189, 0.2);
+        -moz-box-shadow: 0px 0px 2px 3px rgba(189, 185, 189, 0.2);
+        box-shadow: 0px 0px 2px 3px rgba(189, 185, 189, 0.2);
+        color: rgba(204, 204, 204, 0.3);
+        font-weight: 800;
+        margin-right: 15px;
+        cursor: pointer;
+      }
+
+      .touch-mobile-consent div {
+        display: table-cell;
+        vertical-align: middle;
+        font-size: 20px;
+        line-height: 20px;
+      }
+
+      .touch-mobile-consent.initial-state {
+        animation: pulse 3s infinite;
+      }
+
+      .touch-mobile-consent.accepted {
+        background: rgba(144, 197, 65, 0.25);
+      }
+
+      .touch-mobile-consent.accepted div {
+        color: #90c541;
+      }
+
+      .touch-mobile-consent.rejected {
+        background: #ff5d4b;
+      }
+
+      .touch-mobile-consent.rejected div {
+        color: white;
+      }
+
+      .inline {
+        display: inline-block;
+        min-width: 50px;
+      }
+
+    </style>
+
+    <div id="consentContainer">
+      <div class="consent-tab-container">
+        <div class="consentTab consent-tab" data-tab="1"
+          style="display: none; opacity: 1; transform: translateX(-100%);">
+          <div class="strapline text-center" data-transition-color="#aecd65"
+            style="color: rgb(174, 205, 101); padding-left: 0px; padding-right: 0px; box-shadow: black 0px 0px 0px 0px;">
+            Processing your entry</div>
+          <div id="isMemberLoad" style="padding-top: 15px; display: none;">
+            <div class="content-container">
+              <h4 class="text-center">Receive a Petcube Pet Camera to rate and review!</h4>
+              <div class="image-container">
+                <img src="/uploads/product_images/870_product.jpeg" class="path-header-image">
+              </div>
+              <br>
+              <div class="strapline text-center"
+                style="color: rgb(174, 205, 101); padding-left: 0px; padding-right: 0px; box-shadow: black 0px 0px 0px 0px;">
+                <div><i class="fa fa-spinner fa-spin fa-3x"></i></div>
+                <br>
+                Hang tight ...
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="consentTab consent-tab" data-tab="2" style="display: block; transform: translateX(0%);">
+          <div class="product-signup" id="signupForm">
+            <div class="strapline text-center" data-transition-color="#aecd65"
+              style="color: rgb(174, 205, 101); padding-left: 0px; padding-right: 0px; box-shadow: black 0px 0px 0px 0px;">
+              Great, lets get started</div>
+            <div class="signup-form">
+              <div class="getstarted">
+
+
+                <div class="artisan">
+                  <div class="error_container" id="generalError" style="display: none;"></div>
+                  <div id="formLayout3"  class="form-horizontal">
+                    <div class="holder">
+                      <span class="successTarget text-success"></span>
+                      <span class="errorTarget small text-danger"></span>
+                      <select id="initial-title" name="record[title]" data-name="title"
+                        class="form-control formInput input-success">
+                        <option selected="" disabled="">Title</option>
+                        <option value="Mr">Mr</option>
+                        <option value="Mrs">Mrs</option>
+                        <option value="Ms">Ms</option>
+                        <option value="Miss">Miss</option>
+                      </select>
+                    </div>
+
+                    <div class="holder">
+                      <span class="successTarget text-success"></span>
+                      <span class="errorTarget small text-danger"></span>
+                      <input id="initial-first_name" class="form-control formInput input-success" [(ngModel)]="firstName"
+                        name="record[first_name]" data-name="first name" placeholder="First Name" type="text">
+                    </div>
+
+                    <div class="pesky-holder">
+                      <input id="middle_name" class="form-control pesky-input" placeholder="Middle Name"
+                        autocomplete="no" name="middle_name">
+                      <p class="pesky-content"><img src="/img/peskybotbait.png" style="width: 250px;"></p>
+                    </div>
+
+                    <div class="holder">
+                      <span class="successTarget text-success"></span>
+                      <span class="errorTarget small text-danger"></span>
+                      <input id="initial-last_name" class="form-control formInput input-success" [(ngModel)]="lastName"
+                        name="record[last_name]" data-name="last name" placeholder="Last Name" type="text">
+                    </div>
+
+                    <div class="holder">
+                      <span class="successTarget text-success"></span>
+                      <span class="errorTarget small text-danger" *ngIf="emailError">Please supply a valid Email</span>
+                      <input id="initial-email" class="form-control formInput input-fail" name="record[email]" [(ngModel)]="email"
+                        data-name="email" placeholder="Email" type="email">
+                    </div>
+
+                    <button class="btn btn-pt btn-green" id="submitInitialForm">
+                      <span class="initial" style="display: inline;" (click)="showTab2()">Sign up with <strong>Email</strong></span>
+                      <span class="loading" style="display: none;">Checking your details</span>
+                      <i class="fa fa-spinner fa-spin loading" style="display: none;" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--
+          -->
+        <div class="consentTab consent-tab" data-tab="3" [ngStyle]="{ 'display': showModalTab2 === true ? 'block': 'none' }">
+          <div class="strapline text-center" data-transition-color="#aecd65" style="color: #90c541; font-weight: bold;">Almost there, we just need these final
+            details</div>
+          <div class="product-signup">
+            <div class="signup-form">
+              <div class="getstarted">
+                <div class="artisan secondSignup">
+                  <form id="form">
+                    <input style="display:none">
+                    <input type="password" style="display:none">
+
+                    <div class="holder">
+                      <p>Search For Your Address:</p>
+                      <span class="successTarget text-success"></span>
+                      <span class="errorTarget small text-danger"></span>
+                      <div id="noResultsFound" style="display: none;">
+                        <p class="warning-text">We are struggling to find your address. Try the following:</p>
+                        <ul>
+                          <li>Make sure your address is typed correctly with no mistakes</li>
+                          <li>Type your address as it would appear on a letter e.g. 1 example street city state zip code
+                          </li>
+                          <li>If you live in an apartment block search for the block, this will then give you further
+                            options to pick you apartment</li>
+                          <li>As soon as you see your address in the pop-up list you can select it.</li>
+                          <li>You must select your address from the address list in the pop-up, even if it is the last
+                            option available</li>
+                        </ul>
+                      </div>
+                      <input type="text" class="form-control hasInstruction customSuccessFail" data-name="Address"
+                        id="address" autocomplete="autoCompleteValueChromeDoesNotUnderstand" placeholder="" value="">
+                      <div class="hiddenText pb10 smallText text-muted" data-focus="address" id="hideOnSelected">Start
+                        typing your address, then <b class="highlight-text">select</b> your address from the pop-up
+                        address list - you <b class="highlight-text">must</b> select your address from the pop-up list
+                        by clicking it. Please enter a correct address as this is where your product/gift card will be
+                        sent if selected.</div>
+                      <div class="address-preview" id="addressPreview" style="display: none;">
+                        <div id="addressContent"></div>
+                        <div id="clearAddress" style="display: none;">Not right? To change your address click to
+                          re-enter: <span id="resetAddress">X</span></div>
+                      </div>
+                    </div>
+
+                    <div class="holder">
+                      <p>Enter Your Cell Phone Number:</p>
+                      <span class="successTarget text-success"></span>
+                      <span class="errorTarget small text-danger"></span>
+
+                      <input type="tel" id="member-mobile" class="form-control hasInstruction" name="record[mobile]"
+                        placeholder="" value="" required="" autocomplete="off" [(ngModel)]="mobileNo">
+                      <div class="hiddenText smallText text-muted" data-focus="mobile">
+                        Please enter a correct Cell Phone number as you will be notified by text if you're selected and
+                        we will also alert you to other new offers from Product Testing.
+                      </div>
+                    </div>
+
+                    <div class="holder">
+                      <p>Select Your Date Of Birth:</p>
+                      <span class="successTarget text-success"></span>
+                      <span class="errorTarget small text-danger"></span>
+                          <input type="datetime" id="member-mobile" class="form-control hasInstruction" name="record[mobile]"
+                            placeholder="" value="" required="" autocomplete="off" [(ngModel)]="dateOfBirth">
+                    </div>
+
+                    <!-- END only if is logged in or facebook signup -->
+                    <input type="hidden" name="city" id="city" value="">
+                    <input type="hidden" name="state" id="state" value="">
+                    <input type="hidden" name="state_code" id="state_code" value="">
+
+                    <input type="hidden" name="record[street_address]" id="address_line" value="">
+                    <input type="hidden" name="record[zip_code]" id="zip_code" value="">
+
+                    <!-- START if php has record[address] -->
+                    <!--input type='hidden' name='addressLookup' value='1'-->
+                    <!-- End if php has record[address] -->
+
+                    <!-- START only if is NOT logged in AND NOT facebook signup -->
+                    <div class="holder">
+                      <p>Create Your Password:</p>
+                      <span class="successTarget text-success"></span>
+                      <span class="errorTarget small text-danger"></span>
+
+                      <input class="form-control" placeholder="Enter your chosen password" id="member-password"
+                        type="password" name="record[password]" required="" autocomplete="off"  [(ngModel)]="password">
+                      <div class="hiddenText smallText text-muted" data-focus="password">You will use this password and
+                        your email (<b><span id="formDisplayEmailTarget">Email target</span></b>) to login into <span
+                          id="formDisplaySiteTarget">Site target</span>
+                        .</div>
+                    </div>
+                    <!-- END only if is NOT logged in AND NOT facebook signup -->
+
+                    <p class="center">
+                      <button class="btn btn-pt btn-green" style="margin-top: 10px;" id="memberSubmitForm">
+                        <span (click)="signUp()" class="initial">Complete Signup</span>
+                        <span class="loading" style="display: none;">Checking your details</span>
+                        <i class="fa fa-spinner fa-spin loading" style="display: none;" aria-hidden="true"></i>
+                      </button>
+                    </p>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="clearfix text-left nopad">
+        <span data-remodal-action="close" class="text-ptms-secondary icon-class" (click)="showOrHideModal()">Close</span>
+      </div>
+    </div>
+  </div>
+</div>
